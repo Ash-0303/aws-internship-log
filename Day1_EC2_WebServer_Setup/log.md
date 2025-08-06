@@ -1,12 +1,12 @@
-# 📅 Day 1 – EC2 Instance & Apache Web Server Setup
+# Day 1 – EC2 Instance & Apache Web Server Setup
 
-**🗓️ Date:** 2nd July 2025  
-**🎓 Internship Role:** Cloud Support Engineer Intern  
-**☁️ Platform:** Amazon Web Services (AWS)
+**Date:** 2nd July 2025  
+**Internship Role:** Cloud Support Engineer Intern  
+**Platform:** Amazon Web Services (AWS)
 
 ---
 
-## ✅ Task Summary
+## Task Summary
 
 - Launched my first EC2 instance on AWS.
 - Installed and configured a basic Apache web server.
@@ -15,21 +15,21 @@
 
 ---
 
-## 🖥️ EC2 Instance Setup
+## EC2 Instance Setup
 
 - **Instance type:** `t2.micro`
 - **Operating System:** Amazon Linux 2
 - **Key Pair:** Downloaded `.pem` file
 - **Security Group Rules:**
-  - ✅ SSH (Port 22) → `0.0.0.0/0`
-  - ✅ HTTP (Port 80) → `0.0.0.0/0`
-  - ✅ HTTPS (Port 443) → `0.0.0.0/0`
+  - SSH (Port 22) → `0.0.0.0/0`
+  - HTTP (Port 80) → `0.0.0.0/0`
+  - HTTPS (Port 443) → `0.0.0.0/0`
 
-⚠️ *Note:* Allowing SSH from anywhere is **not secure**. In future deployments, I plan to restrict SSH access to **only my personal IP**.
+*Note:* Allowing SSH from anywhere is **not secure**. In future deployments, I plan to restrict SSH access to **only my personal IP**.
 
 ---
 
-## 🔐 SSH Configuration Using PuTTY
+## SSH Configuration Using PuTTY
 
 Since I used a Windows machine:
 
@@ -42,7 +42,7 @@ Since I used a Windows machine:
 
 ---
 
-## ⚙️ Apache Web Server Installation
+## Apache Web Server Installation
 
 Switched to root user and executed the following commands:
 
@@ -57,7 +57,7 @@ sudo systemctl status httpd       # Verify Apache is running
 
 ---
 
-## 🌐 Hosting a Static HTML Page
+## Hosting a Static HTML Page
 
 Created a simple HTML file:
 
@@ -70,13 +70,13 @@ Then accessed the web page using the EC2 instance’s public IP.
 
 ---
 
-## ❌ Initial Issue with HTTP
+## Initial Issue with HTTP
 
 - The page did **not** load over `HTTPS`.
 - However, switching to `HTTP` worked and displayed:
   > “Hello from EC2”
 
-### 🔍 Possible Reasons:
+### Possible Reasons:
 - Apache config may need explicit HTTPS listener.
 - Browser may have cached a forced redirect to HTTP.
 - Firewall or antivirus on local machine could be blocking HTTPS.
@@ -84,7 +84,7 @@ Then accessed the web page using the EC2 instance’s public IP.
 
 ---
 
-## 🧠 Lessons Learned
+## Lessons Learned
 
 - Always test both `HTTP` and `HTTPS` when configuring web servers.
 - Validate both **Security Group** and **local firewall rules**.
